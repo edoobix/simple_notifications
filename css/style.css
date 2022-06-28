@@ -1,0 +1,129 @@
+/*
+@keyframes slideRight {
+	from {transform: translate(0,0)}
+	to {transform: translate(120%,0)}
+}
+*/
+@keyframes goUp {
+	from {transform: translate(0,0)}
+	to {transform: translate(0,calc(-100% - 30px))}	
+}
+
+
+/*Стилизация скролл-бара */
+/* W3C standard
+   сейчас только для Firefox */
+* {
+  scrollbar-width: 4px;
+  scrollbar-color: rgba(0, 0, 0, .2) transparent;
+}
+
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 2px;
+/*  border: 3px solid orange; */
+}
+
+
+.notice-box_div::-webkit-scrollbar{
+	width: 0;
+}
+/*///////////////////////*/
+
+.goUp{
+	animation: goUp .2s linear; 	
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: all .2s;
+}
+
+.notice-box_div{
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 250px;
+	overflow: hidden;
+	overflow-y: auto;
+	max-height: 100%;
+}
+
+.notice-box{
+/*	transition: all 1s; */
+	position: relative;
+	text-align: center;
+	min-width: 200px;
+	padding: 10px;
+	margin: 15px 25px;
+	border-radius: 10px;
+	background: #efefef;
+}
+
+.classic{
+	background: #efefef !important;
+}
+
+.success{
+	background: green !important;
+}
+.error{
+	background: red !important;
+}
+/*
+.slideRight{
+	animation: slideRight .5s linear; 
+}
+*/
+
+.line{
+	width: 100%;
+	height: 1px;
+	border-radius: 50%;
+	margin: 5px auto;
+	background: #c1c1c1;
+}
+
+.close-notice-box{
+	position: absolute;
+	cursor: pointer;
+	top: 3px;
+	right: 3px;
+	width: 15px;
+	height: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.close-notice{
+	width: 10px;
+	height: 2px;
+	background: #8f8f8f;
+	transform: rotate(-45deg);
+}
+
+.close-notice:before{
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 2px;
+	background: #8f8f8f;
+	top: 0;
+	left: 0;
+	transform: rotate(90deg);
+}
+
+
+
+
